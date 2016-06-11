@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title></title>
+		
+		<meta charset="utf8">
+
+	</head>
+
+
+
+	<body>
+
+		<script type="text/javascript">
+			"use strict"
+
+			//example 1
+			console.log("example 1:");
+			var myfavsong = "let it go from the movie Frozen";
+			console.log("myfavsong in global scope: "+myfavsong);
+
+			function fun1() {
+
+				myfavsong = "call me maybe";
+				console.log("myfavsong in fun1 local scope: "+myfavsong);
+			}
+			
+			fun1();
+			console.log("myfavsong in global scope: "+myfavsong);
+
+
+			//example 2
+			console.log("\n");
+			console.log("example 1:");
+			var myfavsong = "let it go from the movie Frozen";
+			console.log("myfavsong in global scope: "+myfavsong);
+
+			function fun2(myfavsong) {
+
+				myfavsong = "kind of blue";
+				console.log("myfavsong in fun2 local scope: "+myfavsong);
+			}
+
+			fun2(myfavsong);
+			console.log("myfavsong in global scope: "+myfavsong);
+
+
+		</script>
+	</body>
+
+</html>
+

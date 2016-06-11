@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>why won't this work?</title>
+		<div id="display">
+			<h1>Display input value here when button clicked</h1>
+		</div>
+		<input id="a">
+		<input id="b">
+		<input id="c">
+		<button name="num" type="button" id="btn1">1</button>
+		<button name="num" type="button" id="btn2">2</button>
+		<button name="num" type="button">3</button>
+		<button name="num" type="button">4</button>
+
+		<meta charset="utf8">
+
+	</head>
+
+
+
+	<body>
+
+		<script type="text/javascript">
+			"use strict"
+			function sum(num1,num2){
+				var sum = num1 + num2;
+				return sum;
+			}
+			function display(num){
+
+				if(document.getElementById("c")==""){
+
+					document.getElementById('b').value = num;
+				}
+			}
+
+			var buttons = document.getElementsByName('num');
+
+			
+			console.log(sum(3,6));
+			console.log(sum(2,2));
+			console.log(sum(1,1));
+
+
+			// console.log(buttons);
+
+			document.getElementById('btn1').addEventListener("click",function(){
+				display(1);
+				
+			},false);
+
+			document.getElementById('btn2').addEventListener("click",function(){
+				display(2);
+				
+			},false);
+
+
+		</script>
+	</body>
+
+</html>
+

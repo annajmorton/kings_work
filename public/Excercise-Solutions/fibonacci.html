@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>aah loops!</title>
+		
+		<meta charset="utf8">
+		<style type="text/css">
+			#move{
+				background-color: purple;
+				height:4rem; 
+				width:4rem;	
+				border-radius: 50%;
+				position: absolute;
+				top:50%;
+				left: 50%;
+				margin-top:-2rem; 
+				margin-left:-2rem;
+			}
+		</style>
+
+	</head>
+
+
+
+	<body>
+
+		<div id="move"></div>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+		"use strict"
+
+		var fibnum = 30;
+		var n_1=0;
+		var n_2=0;
+		var n=0;
+		
+		for (var i = 0; i <= fibnum; i++) {
+			n= n_1 + n_2;
+			console.log(n);	
+
+			if (n==0) {
+				n+=1;
+				console.log(n);
+			}
+			n_2 = n_1;
+			n_1 = n;	
+		};
+
+		console.log($('#move').offset());
+		</script>
+	</body>
+
+</html>
+

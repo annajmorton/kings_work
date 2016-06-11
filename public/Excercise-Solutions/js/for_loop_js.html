@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>JavaScript Statements For</title>
+		
+		<meta charset="utf8">
+
+	</head>
+
+
+
+	<body>
+
+		<h1>Hiya!</h1>
+
+		<script type="text/javascript">
+			"use strict"
+
+			// number 2
+			console.log("solution for #2");
+			for (var i = 1; i <= 10; i++) {
+				
+				var log = '';
+				for (var j = 1; j <= i; j++) {
+					if (i==10) {
+						log += 0;
+					} else {
+						log += i;
+					}
+				};
+				console.log(log);
+			};
+
+			// number 3
+			console.log("solution for #3");
+			var rando = Math.ceil(Math.random()*10);
+			var solution;
+
+			for (var i = 1; i <= 10; i++) {
+				
+				solution  = rando * i;
+				console.log(rando+'x'+i+'='+solution);
+			};
+
+			// number 4
+			console.log("solution for #4");
+		
+			for (var i = 1; i <= 10; i++) {
+				var rando = Math.ceil(Math.random()*(200-20));	
+				var numstate = " is odd"; 
+				if (rando % 2 == 0) {
+					numstate = " is even";
+				};
+				console.log(rando+numstate);
+			};
+
+			// number 5
+			console.log("solution for #5");
+		
+			for (var i = 100; i > 0; i-=5) {
+				console.log(i);
+			};
+
+		</script>
+	</body>
+
+</html>
+

@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>JavaScript Statements While</title>
+		
+		<meta charset="utf8">
+		<style type="text/css">	
+
+		</style>
+
+	</head>
+
+
+
+	<body>
+
+		<h1>We are here!</h1>
+
+		<script type="text/javascript">
+			"use strict"
+
+			// number 2
+			console.log("solution for #2");	
+
+			var allCones = Math.floor(Math.random() * 50) + 50;
+			var cones;
+			var remaining = allCones;
+			var msg;
+
+			do{
+
+				cones = Math.floor(Math.random() * 5) + 1;
+				remaining -= cones; 
+				msg = cones + ' cones sold...';
+				if (remaining<0) {
+					msg = 'Cannot sell you ' + cones + ' cones I only have ' + (remaining + cones) +' ...';
+				};
+				if (remaining==0) {
+					msg = 'Yay! I sold them all!';
+				};
+
+				console.log(msg);
+
+			}while(remaining>0);
+
+			// number 3
+			console.log("solution for #3");	
+			var num = 2;
+			while(num < 65536){
+				console.log(num+=num);
+			};
+
+		</script>
+	</body>
+
+</html>
+

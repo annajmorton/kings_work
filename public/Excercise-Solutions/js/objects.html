@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title></title>
+		
+		<meta charset="utf8">
+
+	</head>
+
+
+
+	<body>
+		<script type="text/javascript">
+		"use strict"
+			var person = {};
+
+			person.first = "Anna";
+			person.last = "Morton";
+			person.age = 30;
+			person.height = 72;
+			person.features = ['reach high shelves','fast'];
+
+			console.log(person);
+
+
+			var person2 = {
+
+				first: "I am a singing telegram",
+				last: "hiding behind a tree",
+				age: 3,
+				height: 42,
+				features: ['super super','end of the world'],
+				humanHeight: function() {
+
+					var feet = Math.floor(this.height /12);
+					var inches = this.height%12;
+
+					return feet +"' "+inches+'"';
+				}
+
+			};
+
+			console.log(person2);
+			console.log(person2.humanHeight());
+
+		</script>
+
+	</body>
+
+</html>
+

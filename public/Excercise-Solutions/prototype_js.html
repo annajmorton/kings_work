@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title></title>
+		
+		<meta charset="utf8">
+
+	</head>
+
+
+
+	<body>
+		<script src="customer.js"></script>
+		<script type="text/javascript">
+
+			'use strict';
+
+			var customers = {
+				list: [],
+				displayInfo: function() {
+					this.list.forEach(function(customer) {
+						var total = customer.calculateTotal();
+						var discountTotal = customer.calculateTotalWithDiscount();
+
+						console.log(customer.name + ' purchase ' + customer.products.length + ' items that cost $' + total.toFixed(2) + ' total. After discount it cost $' + discountTotal.toFixed(2));
+					});
+				},
+				collectInfo: function() {
+					var customer = this.getNewCustomer();
+					customer.name = prompt('What is the customer\'s name?');
+
+					do {
+
+						var product = customer.getNewProduct();
+						product.name = prompt('What did ' + customer.name + ' buy?');
+						product.price = parseFloat(prompt('How much did ' + product.name + ' cost?'));
+
+						customer.products.push(product);
+
+						var moreProducts = confirm('Do you have more products to enter for ' + customer.name + '?');
+					} while (moreProducts);
+
+					this.list.push(customer);
+				},
+				getNewCustomer: function() {
+					var customer = {
+						name: null,
+						products: [],
+						amountToGetDiscount: 200,
+						discount: .35,
+						calculateTotal: function() {
+							var total = 0;
+							this.products.forEach(function(product) {
+								total += product.price;
+							});
+							return total;
+						},
+						calculateTotalWithDiscount: function() {
+							var total = this.calculateTotal();
+
+							if (total >= this.amountToGetDiscount) {
+								total = total - (total * this.discount);
+							}
+
+							return total;
+						},
+						getNewProduct: function() {
+							var product = {
+								name: null,
+								price: 0
+							};
+
+							return product;
+						}
+					};
+
+					return customer;
+				}
+			}
+
+			do {
+				customers.collectInfo();
+
+				var moreCustomers = confirm('Do you have more customers to add?');
+			} while(moreCustomers);
+
+			customers.displayInfo();
+			
+		</script>
+
+	</body>
+
+</html>
+

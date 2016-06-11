@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title></title>
+		
+		<meta charset="utf8">
+
+	</head>
+
+
+
+	<body>
+		<script type="text/javascript">
+			"use strict"
+			// I had a slightly different solution to the fibonacci challenge
+			var a = 1, b = 1, f = a;
+			console.log(a);
+			for(var i = 1; f < 10000; i++) {
+				console.log(f);
+				f = a + b;
+				a = b;
+				b = f;
+			} 
+		</script>
+	</body>
+
+</html>
+

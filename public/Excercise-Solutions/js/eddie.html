@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Eddie's Code</title>
+		
+		<meta charset="utf8">
+
+	</head>
+
+
+
+	<body>
+
+		<script type="text/javascript">
+			"use strict";
+			var names;
+			names = prompt("What is your names?");
+
+			function sayhello(names) {
+			    while (names == null || names == "") {
+			        names = prompt("You will be vaporized immediately if you do not enter your names.");
+				    if (names !== null) {
+				        while (names.length < 3) {
+				            names = prompt("I don't believe that's your names. Please enter another.");
+				            if (names == null) {
+				            	break;
+				            };
+				        }
+				    }
+			    }
+			    alert("Hello " + names + ", I see you've arrived.");
+			}
+			sayhello(names);
+
+			var random = Math.floor((Math.random()*100)+1);
+
+			function isOdd(number) {
+			    (number % 2 !== 0) ? alert("You have " + number + " seconds to live.") : alert("You will survive for another " + number + " years.")
+			}
+
+			isOdd(random);
+
+
+		</script>
+	</body>
+
+</html>
+
