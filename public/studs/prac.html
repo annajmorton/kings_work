@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title></title>
+		
+		<meta charset="utf8">
+		<style type="text/css">
+			.body{
+
+                display: flex;
+                justify-content: center;
+
+            }
+            .cupcakes {
+				width: 50%;
+			}
+
+
+		</style>
+
+	</head>
+
+
+
+	<body>
+
+		<div class='cupcakes'>
+			<img height="100" width="100">
+			<img height="100" width="100">
+			<img height="100" width="100">
+		</div>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+
+		var konamiCode = [38,38,40,40,37,39,37,39,66,65,13];
+        var i=0;
+        var j=6;
+        var img = ['3gavin_img.jpg','1gavin_img.jpg','2gavin_img.jpeg'];
+        $('img').each(function(index, element){
+        	element.src = img[0];
+        })
+        $(document).keyup(function(event){
+
+            event.keyCode == konamiCode[i] ? i++ : i=0;
+            console.log($('.cupcakes'));
+
+            if (i == konamiCode.length) {
+                var addLives = 30-3;
+            	alert("you have added " + (addLives+3) + " lives!");
+
+                for (var b = 0; b <= addLives ; b++) {
+                    console.log(b);
+                    $('.cupcakes').last().append('<img height="100" width="100">').css();    
+                };
+                
+                $('img').each(function(index, element){
+                    element.src = img[0];
+                })
+
+            } 
+
+            if(i==0){
+            	var k = j%2+1;
+            	var n;
+
+            	switch(j){
+            		case 1:
+            		case 2:
+            			n = 0;
+            			break;
+            		case 3:
+            		case 4:
+            			n = 1
+            			break;
+            		default:
+            			n = 2;	
+            	}
+            	$('.cupcakes').children()[n].src= img[k];
+            	j--;
+            }
+
+            if(j==0){
+            	alert("you are out of cupcakes!!! oh no...");
+            	$('img').remove();
+            }
+        });
+
+
+		</script>
+	</body>
+
+</html>
+

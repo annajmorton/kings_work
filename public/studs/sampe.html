@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>cupcakes</title>
+		
+		<meta charset="utf8">
+		<style type="text/css">
+			
+            .body{
+                display: flex;
+                justify-content: center;
+            }
+            .cupcakes {
+				width: 50%;
+			}
+
+		</style>
+
+	</head>
+
+
+
+	<body>
+
+		<div class='cupcakes'>
+			<img height="100" width="100">
+			<img height="100" width="100">
+			<img height="100" width="100">
+		</div>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+        (function(){
+        "use strict"
+            var i=0;
+            var img = ['3cupcake_img.jpg','1cupcake_img.jpg','2cupcake_img.jpeg'];
+            $('img').each(function(index, element){
+            	element.src = img[0];
+            })
+            $(document).keyup(function(event){
+                $('img').each(function(index, element){
+                    element.src = img[i%4];
+                });
+                i++;
+            }); 
+        })();
+
+		</script>
+	</body>
+
+</html>
+

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>blOOOOOO - G!</title>
+		
+		<meta charset="utf8">
+
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<style type="text/css">
+				body{
+					background-color: #999966;
+					color: papayawhip;
+				}
+				.bs-calltoaction{
+				    position: relative;
+				    width:auto;
+				    padding: 15px 25px;
+				    border: 1px solid #ff8000;
+				    margin-top: 10px;
+				    margin-bottom: 10px;
+				    border-radius: 5px;
+				}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="container-fluid">
+			<h1>so fresh and so blooog</h1>
+			<div id="posts"></div>
+			<button id="refresh"class="btn btn-warning" type="button">load the latest</button>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+			(function() {
+		    	"use strict";
+			   function ajaxBlog() {
+			        $.ajax(
+			            {
+			                url: '/data/blog.json',
+			                type: "GET"
+			            }
+			        ).done(function(response){
+
+			            console.log(response);
+			            $('#posts').html("");
+			            response.forEach(function(post){
+			                var categories = post.categories.join(' ');
+			                var row = `<div class="bs-calltoaction">
+			                    <h2>${post.title}</h2>
+			                    <p>${post.content}</p>
+			                    <div><h3>${post.date} ${categories}<h3></div>
+			                </div>`;
+			                $('#posts').append(row);
+
+			            })
+
+			        }).fail(function(){
+			            alert('the request didn\'t go through!');
+			        });
+			    };
+				ajaxBlog();
+			    $('#refresh').on("click", ajaxBlog);
+			    console.log($('#refresh'));
+
+
+			})();
+		</script>
+
+	</body>
+
+</html>
